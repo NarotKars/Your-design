@@ -1,0 +1,78 @@
+﻿<Window x:Class="Admin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Admin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1025" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="225"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="#153645">
+                <Button Width="235" 
+                        Height="40"
+                        Content="DASHBOARD"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderThickness="1" 
+                        Cursor="Hand" 
+                        BorderBrush="White"
+                        Margin="-5,50,0,0"
+                        HorizontalContentAlignment="Left"
+                        Padding="30,0,0,0"
+                        Click="DashboardButton_Click"/>
+                <Button Width="235" 
+                        Height="40"
+                        Content="COMPANIES"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderThickness="1" 
+                        Cursor="Hand" 
+                        BorderBrush="White"
+                        Margin="-5,0,0,0"
+                        HorizontalContentAlignment="Left"
+                        Padding="30,0,0,0" Click="CompaniesButton_Click" />
+                <Button Width="235" 
+                        Height="40"
+                        Content="PAGES"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderThickness="1" 
+                        Cursor="Hand" 
+                        BorderBrush="White"
+                        Margin="-5,0,0,0"
+                        HorizontalContentAlignment="Left"
+                        Padding="30,0,0,0"
+                        Click="PagesButton_Click">
+                    <Button.ContextMenu>
+                        <ContextMenu x:Name="pages">
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Background="#153645" 
+                    Orientation="Horizontal">
+            <TextBlock Text="YOUR DESIGN" 
+                       FontWeight="Light"
+                       FontSize="22" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Margin="30,0,0,0"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

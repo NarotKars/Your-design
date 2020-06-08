@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>YourDesignDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{81dacc3d-2e19-4eeb-ab04-27d63852faa3}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>YourDesignDB</RootNamespace>
+    <AssemblyName>YourDesignDB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Addresses.sql" />
+    <Build Include="dbo\Tables\Images.sql" />
+    <Build Include="dbo\Tables\Products.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
+    <Build Include="dbo\Tables\ProductsInOrders.sql" />
+    <Build Include="dbo\Tables\Categories.sql" />
+    <Build Include="InsertImage.sql" />
+    <Build Include="InsertCategory.sql" />
+    <Build Include="GetCategories.sql" />
+    <Build Include="GetImages.sql" />
+    <Build Include="UpdateImage.sql" />
+    <Build Include="InsertUser.sql" />
+    <Build Include="InsertOrder.sql" />
+    <Build Include="GetOrders.sql" />
+    <Build Include="InsertProduct.sql" />
+    <Build Include="GetCompanyIdByCompanyName.sql" />
+    <Build Include="dbo\Tables\Feedback.sql" />
+    <Build Include="InsertFeedback.sql" />
+    <Build Include="GetFeedback.sql" />
+    <Build Include="InsertProductsInOrders.sql" />
+    <Build Include="GetCountOfOrdersOfEveryCompany.sql" />
+    <Build Include="GetProfitOfEveryOrder.sql" />
+    <Build Include="UpdateStatus.sql" />
+    <Build Include="GetCompanies.sql" />
+    <Build Include="GetImagesByCompany.sql" />
+    <Build Include="GetProductDetails.sql" />
+    <Build Include="GetOrderDetailsByOrderId.sql" />
+    <Build Include="GetProducts.sql" />
+    <Build Include="GetOrderDetailsByCompany.sql" />
+    <Build Include="UpdateStatusOfProductsInOrders.sql" />
+    <Build Include="GetUserById.sql" />
+    <Build Include="InsertCustomerDesign.sql" />
+    <Build Include="UpdateCustomersPersonalInformation.sql" />
+    <Build Include="UpdateCompanysPersonalInformation.sql" />
+    <Build Include="UpdateOrderStatus.sql" />
+    <Build Include="DeleteProductInOrder.sql" />
+    <Build Include="GetUserByName.sql" />
+    <Build Include="DeleteCompany.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="YourDesignDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
+</Project>

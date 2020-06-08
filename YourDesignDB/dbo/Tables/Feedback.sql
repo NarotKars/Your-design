@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Feedback]
+(
+	[Id] BIGINT IDENTITY(1,1) CONSTRAINT PF_Feedback PRIMARY KEY NOT NULL,
+	[Text] VARCHAR(max) NULL,
+	CustomerId BIGINT CONSTRAINT FK_FeedbackCustomers FOREIGN KEY REFERENCES Users([Id]) NULL
+)

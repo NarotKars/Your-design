@@ -1,0 +1,34 @@
+﻿<Page x:Class="Admin.CompaniesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800" 
+      Title="CompaniesPage">
+
+    <Grid>
+        <TextBlock Width="350" Height="50" VerticalAlignment="Top">Here you can see the companies that do the orders, products <LineBreak />  of every company and also the details of the products.</TextBlock>
+        <DataGrid Name="dataGrid" AutoGenerateColumns = "False" CanUserAddRows="False" Width="350" Margin="0,50,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="true"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="seeProducts" Margin="3,3,4,4" Content="See products" Click="seeProducts_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Remove" Margin="3,3,4,4" Content="Remove" Click="deleteCompany_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Page>

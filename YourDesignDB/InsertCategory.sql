@@ -1,0 +1,14 @@
+﻿CREATE PROCEDURE [dbo].[InsertCategory]
+	@name VARCHAR(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	IF NOT EXISTS (SELECT Id FROM Categories WHERE Name=@name)
+	BEGIN
+		INSERT INTO Categories([Name])
+		VALUES(@name)
+		RETURN SCOPE_IDENTITY()
+	END
+	ELSE
+	RETURN 0
+END
